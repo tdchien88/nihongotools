@@ -5,11 +5,11 @@ You can use the [editor on GitHub](https://github.com/tdchien88/nihongotools/edi
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 
-[Link]https://tdchien88.github.io/nihongotools/
+[Home Page](https://tdchien88.github.io/nihongotools/)
 
-[Link]https://tdchien88.github.io/nihongotools/fpt-test.html
+[FPT Test](https://tdchien88.github.io/nihongotools/fpt-test.html)
 
-[Link]https://tdchien88.github.io/nihongotools/kanji-look-and-learn.html
+[Kanji Look And Learn](https://tdchien88.github.io/nihongotools/kanji-look-and-learn.html)
 
 
 ### Markdown
