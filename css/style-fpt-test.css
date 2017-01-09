@@ -1,0 +1,40 @@
+
+.main-cont{
+	margin: 50px;
+    display: block;
+    width: 500px;
+}
+.kanji input{
+	color: #e61919;
+    font-size: 56px;
+    font-weight: bold;
+    font-family: "MS PGothic";
+    padding: 15px;
+}
+
+.ans input{
+	margin: 10px;
+    border: 0px;
+    font-size: 24px;
+    width: 500px;
+}
+
+.timer{
+    color: #e61919;
+    font-size: 20px;
+}
+
+.score{
+    color: #e61919;
+    font-size: 20px;
+    padding-left: 50px;
+}
+
+.errorList{
+    list-style-position: inside;
+    max-height: 300px;
+    padding-top: 20px;
+    overflow: auto;
+}
+
+li.item{list-style:none; padding:5px;}
