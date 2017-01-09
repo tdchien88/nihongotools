@@ -4,6 +4,11 @@ You can use the [editor on GitHub](https://github.com/tdchien88/nihongotools/edi
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
+[Link]https://tdchien88.github.io/nihongotools/fpt-test.html
+
+[Link]https://tdchien88.github.io/nihongotools/kanji-look-and-learn.html
+
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
