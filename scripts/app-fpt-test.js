@@ -32,7 +32,9 @@ function sai(){
 		li.id = 'errorID_'+listError.length;
 	  	//li.appendChild(document.createTextNode(JSON.stringify(listTuVung[curTuVung])+","));
 		li.appendChild(document.createTextNode(listTuVung[curTuVung].kanji));
-		li.prop('alt', listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning);
+		var att = document.createAttribute("alt");       
+		att.value = listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning;
+		li.setAttributeNode(att);
 	  	ul.appendChild(li);
 	  	listError.push(listTuVung[curTuVung]);
 	}
