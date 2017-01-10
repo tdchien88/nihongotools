@@ -61,14 +61,18 @@ function getRandomInt(min, max) {
 }
 
 function autoNext(){
+	var kanji = listTuVung[curTuVung].kanji;
+	if(str == null || str == "")
+		kanji = listTuVung[curTuVung].hiragana;
 	if(startError == false){
 		curTuVung = getRandomInt(0, listTuVung.length-1);
-		$("#kanji").val(listTuVung[curTuVung].kanji);
+		$("#kanji").val(kanji);
 	}else if(listError.length > 0){
 		curTuVung = getRandomInt(0, listError.length-1);
-		$("#kanji").val(listError[curTuVung].kanji);
+		$("#kanji").val(kanji);
 	}else{
 		$("#kanji").val('上手');
+		$("#ans").val("じょうず - giỏi quá");
 		return ;
 	}
 	
