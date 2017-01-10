@@ -77,12 +77,7 @@ function autoNext(){
 		kanji = listTuVung[curTuVung].hiragana;
 	$("#kanji").val(kanji);
 	
-	$("#total").text('Đ:'
-			 +listTuVung.length - listError.length 
-			 +' - S:'
-			 +listError.length
-			 +' - T:'
-			 + listTuVung.length);
+	$("#total").text(listTuVung.length + ' ['+ (listTuVung.length - listError.length)  +' / ' +listError.length + ']');
 
 	$("#ans").val("");
 	startTimer(timecout, $('#time'));
