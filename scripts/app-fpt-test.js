@@ -31,10 +31,23 @@ function sai(){
 		var li = document.createElement("li");
 		li.id = 'errorID_'+listError.length;
 	  	//li.appendChild(document.createTextNode(JSON.stringify(listTuVung[curTuVung])+","));
-		li.appendChild(document.createTextNode(listTuVung[curTuVung].kanji));
+	  	var kanji = listTuVung[curTuVung].kanji;
+	  	if(kanji == undefined || kanji == "")
+	  		kanji = listTuVung[curTuVung].hiragana;
+		li.appendChild(document.createTextNode(kanji));
+
 		var att = document.createAttribute("alt");       
 		att.value = listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning;
 		li.setAttributeNode(att);
+		li.onmouseover = function() {
+		    var altText = $( this ).attr( "alt" );   
+			$( this ).append( "<span>    [ "+altText+" ]</span>" );
+		};
+
+		li.onmouseout = function(){
+			$( "#errorList li span" ).remove();
+		}
+	  	
 	  	ul.appendChild(li);
 	  	listError.push(listTuVung[curTuVung]);
 	}
@@ -153,15 +166,6 @@ $(document).ready(function(e){
 	$("#btnNG").click(function(e){
 		sai();
 	});
-	
-	 $( "#errorList li" ).hover(function() {
-	    var altText = $( this ).attr( "alt" );   
-		$( this ).append( " - <span> "+altText+"</span>" );
-	  }, function() {
-
-		$( "#errorList li span" ).remove();
-
-	  });
 	
 });
 
