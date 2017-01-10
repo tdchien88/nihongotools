@@ -32,7 +32,7 @@ function sai(){
 		li.id = 'errorID_'+listError.length;
 	  	//li.appendChild(document.createTextNode(JSON.stringify(listTuVung[curTuVung])+","));
 		li.appendChild(document.createTextNode(listTuVung[curTuVung].kanji));
-		li.prop('alt', listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning));
+		li.prop('alt', listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning);
 	  	ul.appendChild(li);
 	  	listError.push(listTuVung[curTuVung]);
 	}
