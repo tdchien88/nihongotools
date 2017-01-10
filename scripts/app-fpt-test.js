@@ -7,6 +7,7 @@ var curTuVung = getRandomInt(0, listTuVung.length-1);
 var score = 1000;
 var startError = false;
 var total = 0;
+var tuDung = 0;
 
 function dung(){
 	if(startError && listError.length>0){
@@ -15,7 +16,7 @@ function dung(){
 		if(elem != null)
 		elem.parentNode.removeChild(elem);
 	}
-	
+	tuDung++;
 	next();
 }
 
@@ -77,7 +78,7 @@ function autoNext(){
 		kanji = listTuVung[curTuVung].hiragana;
 	$("#kanji").val(kanji);
 	
-	$("#total").text(listTuVung.length + ' ['+ (listTuVung.length - listError.length)  +' / ' +listError.length + ']');
+	$("#total").text(listTuVung.length + ' [Đ:'+ tuDung  +' / S:' +listError.length + ']');
 
 	$("#ans").val("");
 	startTimer(timecout, $('#time'));
