@@ -121,7 +121,13 @@ function stopCountdown(){
 }
 function timeout(){
 	stopCountdown();
-	$("#ans").val(listTuVung[curTuVung].hiragana +' - ' + listTuVung[curTuVung].meaning);
+	$("#ans").val(listTuVung[curTuVung].hiragana 
+		      +' - ' 
+		      + listTuVung[curTuVung].meaning
+		      +' - [' 
+		      + listTuVung[curTuVung].hannom.toUpperCase()
+		      +']'
+		     );
 	
 	if($("#autoNext").prop("checked")){
 		//sai();
