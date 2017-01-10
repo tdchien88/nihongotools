@@ -62,7 +62,7 @@ function getRandomInt(min, max) {
 
 function autoNext(){
 	var kanji = listTuVung[curTuVung].kanji;
-	if(str == null || str == "")
+	if(kanji == null || kanji == "")
 		kanji = listTuVung[curTuVung].hiragana;
 	if(startError == false){
 		curTuVung = getRandomInt(0, listTuVung.length-1);
