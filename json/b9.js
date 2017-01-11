@@ -88,7 +88,7 @@ var listTuVung = [
 {'kanji' :'案内', 'hiragana':'あんない', 'meaning':'hướng dẫn', 'hannom':'ÁN NỘI'},
 {'kanji' :'家内', 'hiragana':'かない', 'meaning':'việc nhà', 'hannom':'GIA NỘI'},
 {'kanji' :'旅行客', 'hiragana':'りょこうきゃく', 'meaning':'khách du lịch', 'hannom':'LỮ HÀNH, HÀNG, HẠNH KHÁCH'},
-{'kanji' :'臭味', 'hiragana':'しゅうみ', 'meaning':'sở thích', 'hannom':'XÚ VỊ'},
+{'kanji' :'臭味', 'hiragana':'しゅみ', 'meaning':'mùi hôi', 'hannom':'XÚ VỊ'},
 {'kanji' :'食品会社', 'hiragana':'しょくひんがいしゃ', 'meaning':'công ty thực phẩm', 'hannom':'THỰC PHẨM HỘI XÃ'},
 {'kanji' :'手料理', 'hiragana':'てりょうり', 'meaning':'thức ăn tự nấu', 'hannom':'THỦ LIỆU LÝ'},
 {'kanji' :'', 'hiragana':'すぶた', 'meaning':'thít heo xao', 'hannom':''},
