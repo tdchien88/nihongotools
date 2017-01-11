@@ -10,6 +10,7 @@ var total = 0;
 var tuDung = 0;
 
 function dung(){
+	$("#btnOK").blur();
 	if(startError && listError.length>0){
 		listError.splice(curTuVung, 1);
 		var elem = document.getElementById('errorID_'+curTuVung);
@@ -18,10 +19,11 @@ function dung(){
 	}
 	tuDung++;
 	next();
+	
 }
 
 function sai(){
-
+	$("#btnNG").blur();
 	score -= 25;
 	$("#score").text(score);
 
