@@ -166,7 +166,9 @@ $(document).ready(function(e){
 	$("#btnNG").click(function(e){
 		sai();
 	});
-	
+	$("#kanji").click(function(e){
+		show();
+	});
 });
 
 $(document).keypress(function(e){
