@@ -23,6 +23,9 @@ var tuDung = 0;
 
 function dung(){
 	$("#btnOK").blur();
+	if(startError && listError.length == 0){
+		return;
+	}
 	if(startError && listError.length>0){
 		listError.splice(curTuVung, 1);
 		var elem = document.getElementById('errorID_'+curTuVung);
@@ -36,6 +39,9 @@ function dung(){
 
 function sai(){
 	$("#btnNG").blur();
+	if(startError && listError.length == 0){
+		return;
+	}
 	score -= 25;
 	
 
@@ -79,35 +85,57 @@ function getRandomInt(min, max) {
 		alert('end');
 		arrRandomedNumber = [];
 		startError = true;
+		next();
+		return -1;
 	}
 
 	var randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
 	
 	//if(randomnumber == undefined) return 0;
-
-	while(arrRandomedNumber.indexOf(randomnumber) > -1){
-		randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
-	//	if(randomnumber == undefined) return 0;
+	if(arrRandomedNumber.length <= max){
+		while(arrRandomedNumber.indexOf(randomnumber) > -1){
+			randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+		//	if(randomnumber == undefined) return 0;
+		}
+		
 	}
+	if(startError && arrRandomedNumber.length > max){
+		arrRandomedNumber = [];
+	}
+
 	arrRandomedNumber.push(randomnumber);
+
 	return randomnumber;
 }
 
 function autoNext(){
-	
+	var kanji = '';
+	var temp = '';
 	if(startError == false){
 		curTuVung = getRandomInt(0, listTuVung.length-1);
-	}else if(listError.length > 0){
+		temp = listTuVung[curTuVung];
+		
+	}
+
+	if(startError && listError.length > 0){
 		curTuVung = getRandomInt(0, listError.length-1);
-	}else{
+		temp = listError[curTuVung];
+	}else if(startError && listError.length == 0){
 		$("#kanji").val('上手');
 		$("#ans").val("じょうず - giỏi quá");
+		$("#total").text(listTuVung.length + ' [Đ:'+ tuDung  +' / S:' +listError.length + ']');
+		$("#errorList").empty();
 		return ;
 	}
-	
-	var kanji = listTuVung[curTuVung].kanji;
+	if(curTuVung ==null){
+		console.log('error curTuVung = null')
+		return;
+	}
+
+	kanji = temp.kanji;
 	if(kanji == null || kanji == "")
-		kanji = listTuVung[curTuVung].hiragana;
+		hiragana = temp.hiragana;
+	
 	$("#kanji").val(kanji);
 	
 	$("#total").text(listTuVung.length + ' [Đ:'+ tuDung  +' / S:' +listError.length + ']');
@@ -120,12 +148,20 @@ function autoNext(){
 function next(){
 	if(xIV != null)
 		stopCountdown();
+	
+
 	$("#score").text(score);
+
 	autoNext();
 }
 function show(){
 	if(xIV != null)
 		stopCountdown();
+
+	if(startError && listError.length == 0){
+		return;
+	}
+	
 	timeout();
 }
 
@@ -157,13 +193,25 @@ function stopCountdown(){
 }
 function timeout(){
 	stopCountdown();
-	$("#ans").val(listTuVung[curTuVung].hiragana 
+	if(startError && listError.length>0){
+		$("#ans").val(listError[curTuVung].hiragana 
+		      +' - ' 
+		      + listError[curTuVung].meaning
+		      +' - [' 
+		      + listError[curTuVung].hannom.toUpperCase()
+		      +']'
+		     );
+	}
+	else{
+		$("#ans").val(listTuVung[curTuVung].hiragana 
 		      +' - ' 
 		      + listTuVung[curTuVung].meaning
 		      +' - [' 
 		      + listTuVung[curTuVung].hannom.toUpperCase()
 		      +']'
 		     );
+	}
+	
 	
 	if($("#autoNext").prop("checked")){
 		//sai();
