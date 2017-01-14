@@ -32,6 +32,7 @@ function sai(){
 		var ul = document.getElementById("errorList");
 		var li = document.createElement("li");
 		li.id = 'errorID_'+listError.length;
+		li.className  = 'list-group-item';
 	  	//li.appendChild(document.createTextNode(JSON.stringify(listTuVung[curTuVung])+","));
 	  	var kanji = listTuVung[curTuVung].kanji;
 	  	if(kanji == undefined || kanji == "")
@@ -187,9 +188,13 @@ $(document).keypress(function(e){
 	}else if(e.which == 13){
 		//enter
 		next();
-	}else if(e.which == 32){
-		//space
-		show();
 	}
 
+});
+
+$(document).keydown(function(e) {
+    if (e.which == 32) {
+    	show();
+        return false;
+    }
 });

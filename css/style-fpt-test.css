@@ -4,29 +4,35 @@
     display: block;
     width: 500px;
 }
-.kanji input{
+#kanji{
 	color: #e61919;
     font-size: 76px;
     font-family: "MS PGothic";
     padding: 15px;
+    height: 110px;
 }
 
-.ans input{
-	margin: 10px;
+#ans{
     border: 0px;
     font-size: 24px;
-    width: 500px;
+        height: 50px;
 }
 
 .timer{
     color: #e61919;
     font-size: 20px;
+    height: 37px;
 }
 
 .score{
     color: #e61919;
     font-size: 20px;
-    padding-left: 50px;
+    height: 37px;
+}
+.total{
+    color: #2196f3;
+    font-size: 20px;
+    height: 37px;
 }
 
 .errorList{

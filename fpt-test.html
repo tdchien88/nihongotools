@@ -1,54 +1,111 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>test FPT</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<link href="css/normalize.css" rel="stylesheet">
-
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 
 
-	<LINK href="css/style-fpt-test.css" rel="stylesheet"  type="text/css">
-
-	<script type="text/javascript" src="json/b9.js"></script>
-	<script type="text/javascript" src="scripts/app-fpt-test.js"></script>
+  <title>test FPT</title>
 	
+
+	<link href="css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="css/menu.css" rel="stylesheet"  type="text/css">
+	<link href="css/style-fpt-test.css" rel="stylesheet"  type="text/css">
+
+	<script type="text/javascript" src="json/menu.js"></script>
+	<script type="text/javascript" src="scripts/app-menu.js"></script>
+
+	<script type="text/javascript" src="json/b11.js"></script>
+	<script type="text/javascript" src="scripts/app-fpt-test.js"></script>
+
 </head>
 <body>
-	<content class="main-cont">
 
-	<form>
-		<span id="time" class="timer">00:00</span>
-		<span id="score" class="score">1000</span>
-		<span id="total" class="total">0/0</span>
-		<div  class="kanji" >
-			<input type="input"  id='kanji' readonly="true" value="優しい"></input>
-		</div>
-		
-		<div class="ans">
-			<input type="input"  id='ans'  readonly="true" value="han tu"></input>
-		</div>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Nihongo Tools</h4>
+      <ul id="main-menu" class="nav nav-pills nav-stacked"></ul>
+    </div>
 
-		<div>
-			<input type="checkbox" id="autoNext" name="">auto next</input>
-		</div>
-		
-		
-		<input type="button" name="" id='btnOK' value="dung"></input>
-		<input type="button" name="" id='btnNG' value="sai"></input>
+    <div class="col-sm-9">
 
-		<div class='errorList'>
-			<ul id='errorList'>
+
+
+	<form role="form">
+	<div class="panel-group">
+		<div class="panel  panel-info">
+		    <div class="panel-heading">漢字　チェック</div>
+		      <div class="panel-body">
+		      		<div class ="row form-group">
+						<div class="col-xs-4">
+						  <label for="time">Time:</label>
+						  <span id="time" class="form-control timer">00:00</span>
+						</div>
+						<div class="col-xs-4">
+						  <label for="score">Score:</label>
+						  <span id="score" class="form-control score">1000</span>
+						</div>
+						<div class="col-xs-4">
+						  <label for="total">Total:</label>
+						  <span id="total" class="form-control total">0/0</span>
+						</div>
+							
+					</div>
+
+	    		<div class ="row form-group">
+			        <div class="col-xs-12 kanji">
+			    		<label for="kanji" class="control-label">Question:</label>
+			    		<input type="text"  id='kanji' class="form-control" readonly="true" value="漢字"></input>
+					</div>
+				</div>
+				<div class ="row form-group">
+					<div class="col-xs-12 ans">
+						<label class=" control-label" for="ans">Answer:</label>
+						<input type="text"  id='ans' class="form-control" readonly="true" value="han tu"></input>
+			        </div>
+		        </div>
 				
-			</ul>
+		        <div class="checkbox">
+				    <label><input type="checkbox" id="autoNext" name=""> auto next</label>
+				</div>
+				
+				
+				<input type="button" id='btnOK' value="Correct [D]" class="btn btn-success btn-lg"></button>
+				<input type="button"  id='btnNG' value="Wrong [C]" class="btn btn-danger btn-lg"></button>
+
+      		</div>
+    	</div>
+
+
+		
+		
+		<div class="panel panel-danger">
+			<div class="panel-heading">Error List</div>
+  			<div class="panel-body">
+				<div class='list-group errorList'>
+					<ul id='errorList'> </ul>
+				</div>
+  			</div>
 		</div>
+	</div>	
 	</form>
-		
-		
-	</content>
-	
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
 </body>
 </html>
+
+
