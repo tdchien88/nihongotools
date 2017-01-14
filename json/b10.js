@@ -1,4 +1,4 @@
-var listTuVung = [
+var b10 = [
 	{'kanji' :'案内', 'hiragana':'あんない', 'meaning':'hướng dẫn', 'hannom':'ÁN NỘI'},
 {'kanji' :'絵葉書', 'hiragana':'えはがき', 'meaning':'bưu thiếp', 'hannom':'HỘI DIỆP THƯ'},
 {'kanji' :'男の子', 'hiragana':'おとこのこ', 'meaning':'bé trai', 'hannom':'NAM TỬ, TÝ'},

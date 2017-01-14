@@ -1,9 +1,21 @@
+var listLession=[
+//{'label':'bài 8','link':"b8.js", 'val':'b8'},
+{'label':'bài 9','link':"b9.js", 'val':'b9'},
+{'label':'bài 10','link':"b10.js", 'val':'b10'},
+{'label':'bài 11','link':"b11.js", 'val':'b11'},
+];
+
+for(i in listLession){
+	loadjscssfile(listLession[i].link, "js");
+}
+
+
 
 
 var listError = [];
 var timecout = 6;
 var arrRandomedNumber = [];
-var curTuVung = getRandomInt(0, listTuVung.length-1);
+var curTuVung;// = getRandomInt(0, listTuVung.length-1);
 var score = 1000;
 var startError = false;
 var total = 0;
@@ -25,7 +37,7 @@ function dung(){
 function sai(){
 	$("#btnNG").blur();
 	score -= 25;
-	$("#score").text(score);
+	
 
 	if(startError == false){
 		
@@ -108,7 +120,7 @@ function autoNext(){
 function next(){
 	if(xIV != null)
 		stopCountdown();
-
+	$("#score").text(score);
 	autoNext();
 }
 function show(){
@@ -159,7 +171,26 @@ function timeout(){
 	
 }
 
-$(document).ready(function(e){
+
+function init (){
+	for(i in listLession){
+		var select = document.getElementById('lessions');
+		var opt = document.createElement('option');
+	    opt.value = listLession[i].val;
+	    opt.innerHTML = listLession[i].label;
+	    select.appendChild(opt);
+
+	}
+
+	$('#lessions').val(listLession[listLession.length-1].val)
+	listTuVung = eval(listLession[listLession.length-1].val);
+	curTuVung = getRandomInt(0, listTuVung.length-1);
+}
+
+$(window).on('load', function() {
+    // your code here
+    init ();
+
 	$("#kanji").val(listTuVung[curTuVung].kanji);
 	$("#ans").val("");
 	startTimer(timecout, $('#time'));
@@ -172,7 +203,24 @@ $(document).ready(function(e){
 	$("#kanji").click(function(e){
 		show();
 	});
+
+	$('#lessions').change(function(e){
+    	var valueSelected = this.value;
+    	clearInterval(xIV);
+    	listError = [];
+		arrRandomedNumber = [];
+		score = 1000;
+		startError = false;
+		total = 0;
+		tuDung = 0;
+		$("#errorList").empty();
+    	listTuVung = eval(valueSelected);
+		next();
+
+		$('#kanji').focus();
+	});
 });
+
 
 $(document).keypress(function(e){
 	//var checkWebkitandIE=(e.which==26 ? 1 : 0);
@@ -198,3 +246,20 @@ $(document).keydown(function(e) {
         return false;
     }
 });
+
+
+function loadjscssfile(filename, filetype){
+    if (filetype=="js"){ //if filename is a external JavaScript file
+        var fileref=document.createElement('script')
+        fileref.setAttribute("type","text/javascript")
+        fileref.setAttribute("src", "json/"+filename)
+    }
+    else if (filetype=="css"){ //if filename is an external CSS file
+        var fileref=document.createElement("link")
+        fileref.setAttribute("rel", "stylesheet")
+        fileref.setAttribute("type", "text/css")
+        fileref.setAttribute("href", filename)
+    }
+    if (typeof fileref!="undefined")
+        document.getElementsByTagName("head")[0].appendChild(fileref)
+}

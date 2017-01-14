@@ -1,4 +1,4 @@
-var listTuVung = [
+var b11 = [
 {'kanji' :'イタリア', 'hiragana':'イタリア', 'meaning':'nước Ý', 'hannom':''},
 {'kanji' :'自動車', 'hiragana':'じどうしゃ', 'meaning':'ô tô', 'hannom':'TỰ ĐỘNG XA'},
 {'kanji' :'卵', 'hiragana':'たまご', 'meaning':'trứng', 'hannom':'NÕAN'},
