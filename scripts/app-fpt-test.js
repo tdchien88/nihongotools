@@ -132,20 +132,23 @@ function show(){
 var xIV = null;
 function startTimer(duration, display) {
 	var timer = duration, minutes, seconds;
-	xIV =  setInterval(function () {
-		minutes = parseInt(timer / 60, 10)
-		seconds = parseInt(timer % 60, 10);
+	if(xIV == null){
+		xIV =  setInterval(function () {
+			minutes = parseInt(timer / 60, 10)
+			seconds = parseInt(timer % 60, 10);
 
-		minutes = minutes < 10 ? "0" + minutes : minutes;
-		seconds = seconds < 10 ? "0" + seconds : seconds;
+			minutes = minutes < 10 ? "0" + minutes : minutes;
+			seconds = seconds < 10 ? "0" + seconds : seconds;
 
-		display.text(minutes + ":" + seconds);
+			display.text(minutes + ":" + seconds);
 
-		if (--timer < 0) {
-			//timer = duration;
-			timeout();
-		}
-	}, 1000);
+			if (--timer < 0) {
+				//timer = duration;
+				timeout();
+			}
+		}, 1000);
+	}
+	
 }
 
 function stopCountdown(){
@@ -171,6 +174,20 @@ function timeout(){
 	
 }
 
+function selectedLession(valueSelected){
+	clearInterval(xIV);
+	listError = [];
+	arrRandomedNumber = [];
+	score = 1000;
+	startError = false;
+	total = 0;
+	tuDung = 0;
+	$("#errorList").empty();
+	listTuVung = eval(valueSelected);
+	next();
+
+	$('#kanji').focus();
+}
 
 function init (){
 	for(i in listLession){
@@ -184,7 +201,7 @@ function init (){
 
 	$('#lessions').val(listLession[listLession.length-1].val)
 	listTuVung = eval(listLession[listLession.length-1].val);
-	curTuVung = getRandomInt(0, listTuVung.length-1);
+	next();
 }
 
 $(window).on('load', function() {
@@ -206,18 +223,7 @@ $(window).on('load', function() {
 
 	$('#lessions').change(function(e){
     	var valueSelected = this.value;
-    	clearInterval(xIV);
-    	listError = [];
-		arrRandomedNumber = [];
-		score = 1000;
-		startError = false;
-		total = 0;
-		tuDung = 0;
-		$("#errorList").empty();
-    	listTuVung = eval(valueSelected);
-		next();
-
-		$('#kanji').focus();
+    	selectedLession(valueSelected);
 	});
 });
 
