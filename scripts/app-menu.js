@@ -17,7 +17,7 @@ $(document).ready(function(e){
 		a.appendChild(linkText);
 		a.title = listMenus[i].label;
 		a.href = listMenus[i].link;
-
+		//a.setAttribute('target','_blank');
 		li.appendChild(a);
 
 	  	ul.appendChild(li);

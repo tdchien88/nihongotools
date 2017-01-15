@@ -3,6 +3,7 @@ var listLession=[
 {'label':'bài 9','link':"b9.js", 'val':'b9'},
 {'label':'bài 10','link':"b10.js", 'val':'b10'},
 {'label':'bài 11','link':"b11.js", 'val':'b11'},
+{'label':'kanji 13-14','link':"kanji13-14.js", 'val':'kanji1314'},
 ];
 
 for(i in listLession){
@@ -12,23 +13,23 @@ for(i in listLession){
 
 
 
-var listError = [];
+var listWrong = [];
 var timecout = 6;
 var arrRandomedNumber = [];
 var curTuVung;// = getRandomInt(0, listTuVung.length-1);
 var score = 1000;
-var startError = false;
+var startWrong = false;
 var total = 0;
 var tuDung = 0;
 
 function dung(){
 	$("#btnOK").blur();
-	if(startError && listError.length == 0){
+	if(startWrong && listWrong.length == 0){
 		return;
 	}
-	if(startError && listError.length>0){
-		listError.splice(curTuVung, 1);
-		var elem = document.getElementById('errorID_'+curTuVung);
+	if(startWrong && listWrong.length>0){
+		listWrong.splice(curTuVung, 1);
+		var elem = document.getElementById('wrongID_'+curTuVung);
 		if(elem != null)
 		elem.parentNode.removeChild(elem);
 	}
@@ -39,17 +40,17 @@ function dung(){
 
 function sai(){
 	$("#btnNG").blur();
-	if(startError && listError.length == 0){
+	if(startWrong && listWrong.length == 0){
 		return;
 	}
 	score -= 25;
 	
 
-	if(startError == false){
+	if(startWrong == false){
 		
-		var ul = document.getElementById("errorList");
+		var ul = document.getElementById("wrongList");
 		var li = document.createElement("li");
-		li.id = 'errorID_'+listError.length;
+		li.id = 'wrongID_'+listWrong.length;
 		li.className  = 'list-group-item';
 	  	//li.appendChild(document.createTextNode(JSON.stringify(listTuVung[curTuVung])+","));
 	  	var kanji = listTuVung[curTuVung].kanji;
@@ -66,11 +67,11 @@ function sai(){
 		};
 
 		li.onmouseout = function(){
-			$( "#errorList li span" ).remove();
+			$( "#wrongList li span" ).remove();
 		}
 	  	
 	  	ul.appendChild(li);
-	  	listError.push(listTuVung[curTuVung]);
+	  	listWrong.push(listTuVung[curTuVung]);
 	}
 	
 
@@ -81,10 +82,10 @@ function sai(){
 
 
 function getRandomInt(min, max) {
-	if(startError == false && arrRandomedNumber.length > max){
+	if(startWrong == false && arrRandomedNumber.length > max){
 		alert('end');
 		arrRandomedNumber = [];
-		startError = true;
+		startWrong = true;
 		next();
 		return -1;
 	}
@@ -99,7 +100,7 @@ function getRandomInt(min, max) {
 		}
 		
 	}
-	if(startError && arrRandomedNumber.length > max){
+	if(startWrong && arrRandomedNumber.length > max){
 		arrRandomedNumber = [];
 	}
 
@@ -111,24 +112,24 @@ function getRandomInt(min, max) {
 function autoNext(){
 	var kanji = '';
 	var temp = '';
-	if(startError == false){
+	if(startWrong == false){
 		curTuVung = getRandomInt(0, listTuVung.length-1);
 		temp = listTuVung[curTuVung];
 		
 	}
 
-	if(startError && listError.length > 0){
-		curTuVung = getRandomInt(0, listError.length-1);
-		temp = listError[curTuVung];
-	}else if(startError && listError.length == 0){
+	if(startWrong && listWrong.length > 0){
+		curTuVung = getRandomInt(0, listWrong.length-1);
+		temp = listWrong[curTuVung];
+	}else if(startWrong && listWrong.length == 0){
 		$("#kanji").val('上手');
 		$("#ans").val("じょうず - giỏi quá");
-		$("#total").text(listTuVung.length + ' [Đ:'+ tuDung  +' / S:' +listError.length + ']');
-		$("#errorList").empty();
+		$("#total").text(listTuVung.length + ' [Đ:'+ tuDung  +' / S:' +listWrong.length + ']');
+		$("#wrongList").empty();
 		return ;
 	}
 	if(curTuVung ==null){
-		console.log('error curTuVung = null')
+		console.log('wrong curTuVung = null')
 		return;
 	}
 
@@ -138,7 +139,7 @@ function autoNext(){
 	
 	$("#kanji").val(kanji);
 	
-	$("#total").text(listTuVung.length + ' [Đ:'+ tuDung  +' / S:' +listError.length + ']');
+	$("#total").text(listTuVung.length + ' [Đ:'+ tuDung  +' / S:' +listWrong.length + ']');
 
 	$("#ans").val("");
 	startTimer(timecout, $('#time'));
@@ -158,7 +159,7 @@ function show(){
 	if(xIV != null)
 		stopCountdown();
 
-	if(startError && listError.length == 0){
+	if(startWrong && listWrong.length == 0){
 		return;
 	}
 	
@@ -193,12 +194,12 @@ function stopCountdown(){
 }
 function timeout(){
 	stopCountdown();
-	if(startError && listError.length>0){
-		$("#ans").val(listError[curTuVung].hiragana 
+	if(startWrong && listWrong.length>0){
+		$("#ans").val(listWrong[curTuVung].hiragana 
 		      +' - ' 
-		      + listError[curTuVung].meaning
+		      + listWrong[curTuVung].meaning
 		      +' - [' 
-		      + listError[curTuVung].hannom.toUpperCase()
+		      + listWrong[curTuVung].hannom.toUpperCase()
 		      +']'
 		     );
 	}
@@ -224,13 +225,13 @@ function timeout(){
 
 function selectedLession(valueSelected){
 	clearInterval(xIV);
-	listError = [];
+	listWrong = [];
 	arrRandomedNumber = [];
 	score = 1000;
-	startError = false;
+	startWrong = false;
 	total = 0;
 	tuDung = 0;
-	$("#errorList").empty();
+	$("#wrongList").empty();
 	listTuVung = eval(valueSelected);
 	next();
 
