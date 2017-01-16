@@ -2,8 +2,9 @@ var listLession=[
 //{'label':'bài 8','link':"b8.js", 'val':'b8'},
 {'label':'bài 9','link':"b9.js", 'val':'b9'},
 {'label':'bài 10','link':"b10.js", 'val':'b10'},
-{'label':'bài 11','link':"b11.js", 'val':'b11'},
 {'label':'kanji 13-14','link':"kanji13-14.js", 'val':'kanji1314'},
+{'label':'bài 11','link':"b11.js", 'val':'b11'},
+
 ];
 
 for(i in listLession){
@@ -58,16 +59,22 @@ function sai(){
 	  		kanji = listTuVung[curTuVung].hiragana;
 		li.appendChild(document.createTextNode(kanji));
 
-		var att = document.createAttribute("alt");       
-		att.value = listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning;
-		li.setAttributeNode(att);
+		var alt = document.createAttribute("alt");       
+		alt.value = listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning;
+		li.setAttributeNode(alt);
+
+		var altKanji = document.createAttribute("altKanji");       
+		altKanji.value = kanji;
+		li.setAttributeNode(altKanji);
+
 		li.onmouseover = function() {
 		    var altText = $( this ).attr( "alt" );   
-			$( this ).append( "<span>    [ "+altText+" ]</span>" );
+		    var altKanji = $( this ).attr( "altKanji" );  
+			$( this ).text(altKanji +' ['+ altText+']');
 		};
 
 		li.onmouseout = function(){
-			$( "#wrongList li span" ).remove();
+			$(this).text($( this ).attr( "altKanji" ) );
 		}
 	  	
 	  	ul.appendChild(li);
