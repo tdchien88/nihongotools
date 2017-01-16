@@ -29,10 +29,12 @@ function dung(){
 		return;
 	}
 	if(startWrong && listWrong.length>0){
-		listWrong.splice(curTuVung, 1);
-		var elem = document.getElementById('wrongID_'+curTuVung);
+		
+		var elem = document.getElementById('wrongID_'+listWrong[curTuVung].index);
 		if(elem != null)
 		elem.parentNode.removeChild(elem);
+
+		listWrong.splice(curTuVung, 1);
 	}
 	tuDung++;
 	next();
@@ -51,7 +53,7 @@ function sai(){
 		
 		var ul = document.getElementById("wrongList");
 		var li = document.createElement("li");
-		li.id = 'wrongID_'+listWrong.length;
+		li.id = 'wrongID_'+curTuVung;
 		li.className  = 'list-group-item';
 
 	  	var kanji = listTuVung[curTuVung].kanji;
@@ -80,6 +82,7 @@ function sai(){
 	  	
 	  	//ul.appendChild(li);
 	  	ul.insertBefore(li, ul.childNodes[0]);
+	  	listTuVung[curTuVung].index = curTuVung;
 	  	listWrong.push(listTuVung[curTuVung]);
 	}
 	
