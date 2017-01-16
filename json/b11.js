@@ -82,7 +82,7 @@ var b11 = [
 {'kanji' :'土地', 'hiragana':'とち', 'meaning':'đất đai', 'hannom':'THỔ ĐỊA'},
 {'kanji' :'平地', 'hiragana':'へいち', 'meaning':'đồng bằng', 'hannom':'BÌNH ĐỊA'},
 {'kanji' :'火山', 'hiragana':'かざん', 'meaning':'núi lửa', 'hannom':'HỎA SƠN'},
-{'kanji' :'中級', 'hiragana':'ちゅうきゅう', 'meaning':'cao cấp', 'hannom':'TRUNG,  TRÚNG CẤP'},
+{'kanji' :'中級', 'hiragana':'ちゅうきゅう', 'meaning':'trung cấp', 'hannom':'TRUNG,  TRÚNG CẤP'},
 {'kanji' :'私立', 'hiragana':'しりつ', 'meaning':'tư lập', 'hannom':'TƯ LẬP'},
 {'kanji' :'国立', 'hiragana':'こくりつ', 'meaning':'công lập', 'hannom':'QUỐC LẬP'},
 {'kanji' :'学費', 'hiragana':'がくひ', 'meaning':'học phí', 'hannom':'HỌC PHÍ'},
