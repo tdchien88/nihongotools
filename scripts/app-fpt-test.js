@@ -53,28 +53,29 @@ function sai(){
 		var li = document.createElement("li");
 		li.id = 'wrongID_'+listWrong.length;
 		li.className  = 'list-group-item';
-	  	//li.appendChild(document.createTextNode(JSON.stringify(listTuVung[curTuVung])+","));
+
 	  	var kanji = listTuVung[curTuVung].kanji;
 	  	if(kanji == undefined || kanji == "")
 	  		kanji = listTuVung[curTuVung].hiragana;
+	  	
 		li.appendChild(document.createTextNode(kanji));
 
-		var alt = document.createAttribute("alt");       
-		alt.value = listTuVung[curTuVung].hiragana + ' - ' + listTuVung[curTuVung].meaning;
+		var alt = document.createAttribute("altIndex");       
+		alt.value = curTuVung;
 		li.setAttributeNode(alt);
 
-		var altKanji = document.createAttribute("altKanji");       
-		altKanji.value = kanji;
-		li.setAttributeNode(altKanji);
 
 		li.onmouseover = function() {
-		    var altText = $( this ).attr( "alt" );   
-		    var altKanji = $( this ).attr( "altKanji" );  
-			$( this ).text(altKanji +' ['+ altText+']');
+		    var index = $( this ).attr( "altIndex" );  
+		    var altText = listTuVung[index].hiragana + ' - ' + listTuVung[index].meaning 
+
+			$( this ).text(listTuVung[index].kanji +' ['+ altText+']');
+
 		};
 
 		li.onmouseout = function(){
-			$(this).text($( this ).attr( "altKanji" ) );
+			var index = $( this ).attr( "altIndex" ); 
+			$(this).text(listTuVung[index].kanji);
 		}
 	  	
 	  	ul.appendChild(li);

@@ -18,7 +18,7 @@ var b11 = [
 {'kanji' :'ずっと', 'hiragana':'ずっと', 'meaning':'suốt', 'hannom':''},
 {'kanji' :'多い', 'hiragana':'おおい', 'meaning':'nhiều', 'hannom':'ĐA'},
 {'kanji' :'億', 'hiragana':'おく', 'meaning':'trăm triệu', 'hannom':'ỨC'},
-{'kanji' :'', 'hiragana':'キロメートル', 'meaning':'km', 'hannom':''},
+{'kanji' :'キロメートル', 'hiragana':'キロメートル', 'meaning':'km', 'hannom':''},
 {'kanji' :'平方キロメートル', 'hiragana':'へいほうキロメートル', 'meaning':'km2', 'hannom':'BÌNH PHƯƠNG'},
 {'kanji' :'～倍', 'hiragana':'～ばい', 'meaning':'gấp ~ lần', 'hannom':'BỘI'},
 {'kanji' :'会社員', 'hiragana':'かいしゃいん', 'meaning':'nhân viên công ty', 'hannom':'HỘI XÃ VIÊN'},
