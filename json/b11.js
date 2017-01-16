@@ -27,7 +27,7 @@ var b11 = [
 {'kanji' :'日本製', 'hiragana':'にほんせい', 'meaning':'đồ nhật', 'hannom':'NHẬT BẢN CHẾ'},
 {'kanji' :'機能', 'hiragana':'きのう', 'meaning':'tính năng', 'hannom':'CƠ NĂNG'},
 {'kanji' :'デザイン', 'hiragana':'デザイン', 'meaning':'thiết kế', 'hannom':''},
-{'kanji' :'テンポ', 'hiragana':'テンポ', 'meaning':'tốc độ', 'hannom':''},
+{'kanji' :'テンポ', 'hiragana':'テンポ', 'meaning':'nhịp độ', 'hannom':''},
 {'kanji' :'暇', 'hiragana':'ひま', 'meaning':'rảnh rỗi', 'hannom':'HẠ'},
 {'kanji' :'生活', 'hiragana':'せいかつ', 'meaning':'cuộc sống', 'hannom':'SINH HỌAT'},
 {'kanji' :'料金', 'hiragana':'りょうきん', 'meaning':'chi phí', 'hannom':'LIỆU KIM'},

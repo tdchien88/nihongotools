@@ -78,7 +78,8 @@ function sai(){
 			$(this).text(listTuVung[index].kanji);
 		}
 	  	
-	  	ul.appendChild(li);
+	  	//ul.appendChild(li);
+	  	ul.insertBefore(li, ul.childNodes[0]);
 	  	listWrong.push(listTuVung[curTuVung]);
 	}
 	
