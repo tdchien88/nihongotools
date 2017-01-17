@@ -5,6 +5,7 @@ var listLession=[
 {'label':'kanji 13-14','link':"kanji13-14.js", 'val':'kanji1314'},
 {'label':'bài 11','link':"b11.js", 'val':'b11'},
 {'label':'bài 12','link':"b12.js", 'val':'b12'},
+{'label':'bài 13','link':"b13.js", 'val':'b13'},
 ];
 
 for(i in listLession){
