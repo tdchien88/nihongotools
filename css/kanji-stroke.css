@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "KanjiStrokeOrdersKanjiStrokeOrders";
+  src: url(resources/KanjiStrokeOrders_v4.001.ttf) format("truetype");
+}
+.kanji-stroke { 
+    font-family: "KanjiStrokeOrders", sans-serif ;
+    font-size: 150px;
+
+}
+
+.img-chia-dong-tu{
+	width: 100%;
+}
