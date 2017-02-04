@@ -3,4 +3,5 @@ var listMenus = [
 {'label':'Home', 'link':'../nihongotools'},
 {'label':'FPT Test', 'link':'../nihongotools/fpt-test.html'},
 {'label':'Kanji Look And Learn', 'link':'../nihongotools/kanji-look-and-learn.html'},
+{'label':'Kanji Stroke', 'link':'../nihongotools/kanji-stroke.html'},
 ]
