@@ -11,6 +11,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 [Kanji Look And Learn](https://tdchien88.github.io/nihongotools/kanji-look-and-learn.html)
 
+[Kanji Stroke](https://tdchien88.github.io/nihongotools/kanji-stroke.html)
 
 ### Markdown
 
